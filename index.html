@@ -58,6 +58,21 @@ nav .btn{padding:11px 20px;font-size:14px;border-radius:12px}
 .kpi span{font-size:13px;color:var(--muted);font-weight:500}
 @media(max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:10px;opacity:.42;filter:saturate(1.05);transform:rotate(-6deg) scale(1.25);pointer-events:none}
+.mosaic img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px}
+@media(max-width:720px){.mosaic{grid-template-columns:repeat(3,1fr)}}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(8,8,10,.72) 20%,rgba(8,8,10,.5) 55%,var(--bg) 92%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.slots{margin-top:40px;border:1px solid var(--line);border-radius:20px;background:var(--card);padding:22px 24px}
+.slots-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px;font-size:14px}
+.slots-h span{color:var(--muted)}
+.slots-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:800px){.slots-g{grid-template-columns:repeat(2,1fr)}}
+.sl .top{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px}
+.sl .top em{font-style:normal;color:var(--muted);font-weight:600}
+.sl .top em.low{color:#ff8a5c}
+.bar{height:8px;border-radius:99px;background:#22222a;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg2)}
 .track{display:flex;gap:48px;width:max-content;animation:mq 30s linear infinite;font-family:Unbounded;font-weight:500;font-size:15px;color:var(--muted)}
 .track i{color:var(--gold);font-style:normal}
@@ -163,8 +178,8 @@ footer a:hover{color:var(--gold)}
   <a href="#contact" class="btn btn-gold">Promote my track</a>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-  <div class="pill"><span class="dot"></span>@moneroyal is on a viral wave right now</div>
+<header class="hero"><div class="mosaic" aria-hidden="true"><img src="img/v8-3m.jpg" alt=""><img src="img/v1-7m.jpg" alt=""><img src="img/v6-8m.jpg" alt=""><img src="img/v1-6m.jpg" alt=""><img src="img/v3-2m.jpg" alt=""><img src="img/v1-5m.jpg" alt=""><img src="img/v1-4m.jpg" alt=""><img src="img/v1-3m.jpg" alt=""><img src="img/v1-1m.jpg" alt=""><img src="img/v8-3m.jpg" alt=""><img src="img/v6-8m.jpg" alt=""><img src="img/v3-2m.jpg" alt=""></div><div class="wrap">
+  <a href="#slots" class="pill"><span class="dot"></span><span>This week: only <b id="slotsLeftHero" style="color:var(--text)">6</b> slots left on @luxurytalk</span></a>
   <h1 class="h">Make your track the sound of <span class="g">luxury</span></h1>
   <p>Your track as the sound on 4 luxury TikTok pages. Mansions, supercars, night city. You're credited in every video.</p>
   <div class="cta">
@@ -227,6 +242,10 @@ footer a:hover{color:var(--gold)}
     <span class="eyebrow">Pricing</span>
     <h2 class="h">Pick your page</h2>
     <p class="lead">One video to test, or 3 videos and save. Three videos give the algorithm three chances to push your track.</p>
+  </div>
+  <div class="slots" id="slots">
+    <div class="slots-h"><b>This week's promo slots</b><span>Updated <span id="slotsDate"></span></span></div>
+    <div class="slots-g" id="slotsGrid"></div>
   </div>
   <div class="plans">
     <div class="plan hot">
@@ -344,5 +363,18 @@ footer a:hover{color:var(--gold)}
 
 <div class="sticky"><a href="#contact" class="btn btn-gold">Promote my track</a><a href="https://t.me/luxurytalk_net" class="btn btn-tg" style="flex:0 0 auto" aria-label="Telegram">✈</a></div>
 
+<script>
+/* Promo slots: 3 posts per page per day = 21 per page per week. Update "booked" when orders change. */
+var SLOTS={updated:"Oct 29, 2026",perWeek:21,pages:[
+  {name:"@luxurytalk",booked:15},
+  {name:"@moneroyal",booked:4},
+  {name:"@regal_vision",booked:2},
+  {name:"@wealth_lux",booked:0}
+]};
+(function(){var g=document.getElementById('slotsGrid');if(!g)return;document.getElementById('slotsDate').textContent=SLOTS.updated;
+SLOTS.pages.forEach(function(p){var left=Math.max(0,SLOTS.perWeek-p.booked),pct=Math.round(p.booked/SLOTS.perWeek*100);
+var d=document.createElement('div');d.className='sl';d.innerHTML='<div class="top"><span>'+p.name+'</span><em class="'+(left<=7?'low':'')+'">'+(left?left+' left':'Fully booked')+'</em></div><div class="bar"><i style="width:'+pct+'%"></i></div>';g.appendChild(d)});
+var lt=SLOTS.pages[0],h=document.getElementById('slotsLeftHero');if(h)h.textContent=Math.max(0,SLOTS.perWeek-lt.booked)})();
+</script>
 </body>
 </html>
