@@ -331,11 +331,7 @@ footer a:hover{color:var(--gold)}
   <span class="eyebrow">Get started</span>
   <h2 class="h">Ready to put your track in front of <span class="g">millions?</span></h2>
   <p class="lead">Send your track and pick a package. We reply within 24 hours with the best page for your sound.</p>
-  <form class="form" action="https://formsubmit.co/partners@luxurytalk.net" method="POST">
-    <input type="hidden" name="_subject" value="New track request from luxurytalk.net">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://luxurytalk.net/thanks.html">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <form class="form" id="reqForm">
     <label>Your name or label<input name="name" required placeholder="e.g. Nova Records"></label>
     <label>Email<input type="email" name="email" required placeholder="you@email.com"></label>
     <label class="full">Track link (TikTok sound, Spotify, SoundCloud…)<input name="track" required placeholder="https://"></label>
@@ -354,6 +350,7 @@ footer a:hover{color:var(--gold)}
     </label>
     <label class="full">Telegram or WhatsApp (optional)<input name="messenger" placeholder="@username"></label>
     <button class="btn btn-gold full" type="submit">Send request →</button>
+    <p class="full" id="formNote" style="display:none;font-size:13px;color:var(--muted);text-align:center">Your mail app should open with the request ready. Just press send. No mail app? Message us on Telegram below.</p>
   </form>
   <div class="or">or message us directly</div>
   <div class="cta">
@@ -404,6 +401,12 @@ var d=document.createElement('div');d.className='sl';d.innerHTML='<div class="to
   var ko=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){count(x.target);ko.unobserve(x.target)}})},{threshold:.6});
   document.querySelectorAll('.kpi b, .tile b').forEach(function(e){ko.observe(e)});
 })();
+</script>
+<script>
+document.getElementById('reqForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim()};
+var body='Name / label: '+v('name')+'\nEmail: '+v('email')+'\nTrack: '+v('track')+'\nPackage: '+v('package')+'\nTelegram / WhatsApp: '+v('messenger');
+location.href='mailto:partners@luxurytalk.net?subject='+encodeURIComponent('Track request: '+v('name'))+'&body='+encodeURIComponent(body);
+var n=document.getElementById('formNote');if(n)n.style.display='block'});
 </script>
 </body>
 </html>
