@@ -1,1 +1,3 @@
-# luxurytalk-site
+# Luxury Talk
+
+Website for luxurytalk.net
