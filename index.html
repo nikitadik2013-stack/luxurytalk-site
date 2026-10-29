@@ -66,7 +66,7 @@ nav .btn{height:38px;padding:0 18px;font-size:14px}
 .plans{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden}
 @media(max-width:900px){.plans{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.plans{grid-template-columns:1fr}}
-.plan{padding:32px 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:300px}
+.plan{padding:28px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:330px}
 .plan:last-child{border-right:0}
 @media(max-width:900px){.plan:nth-child(2n){border-right:0}.plan:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:520px){.plan{border-right:0;border-bottom:1px solid var(--line)}.plan:last-child{border-bottom:0}}
@@ -75,7 +75,7 @@ nav .btn{height:38px;padding:0 18px;font-size:14px}
 .plan .tag{font-size:12px;font-weight:500;margin-bottom:18px;height:18px}
 .plan h3{font-size:17px;font-weight:600;letter-spacing:-.01em}
 .plan .meta{font-size:13px;margin-top:4px}
-.plan .price{font-size:48px;font-weight:600;letter-spacing:-.04em;margin:28px 0 4px}
+.plan .price{font-size:48px;font-weight:600;letter-spacing:-.04em;margin:24px 0 4px}
 .plan .pack{font-size:14px;margin-top:auto;padding-top:24px}
 .plan .pack s{color:var(--muted);margin-right:6px}
 .bundle{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:16px;padding:24px 28px;border:1px solid var(--line);border-radius:24px}
@@ -83,6 +83,15 @@ nav .btn{height:38px;padding:0 18px;font-size:14px}
 .bundle .p{font-size:28px;font-weight:600;letter-spacing:-.03em}
 .bundle .p s{font-size:17px;color:var(--muted);font-weight:400;margin-right:8px}
 
+.plan .btn{margin-top:20px;height:44px}
+.btn-white{background:#fff;color:var(--text)}
+.btn-white:hover{background:#e5e5e5}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;background:#fff;color:var(--text)}
+.pill-l{background:var(--soft)}
+.save{font-weight:600;color:#16a34a}
+.plan.hot .save{color:#4ade80}
+.plan .pack{padding-top:14px;margin-top:auto}
+.trustrow{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-size:14px;color:var(--muted)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
 @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
 .steps div{border-top:1px solid var(--text);padding-top:20px}
@@ -117,7 +126,7 @@ footer a:hover{color:var(--text)}
 
 <nav><div class="wrap">
   <a href="#" class="logo">Luxury Talk</a>
-  <div class="links"><a href="#results">Results</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+  <div class="links"><a href="#pricing">Pricing</a><a href="#results">Results</a><a href="#contact">Contact</a></div>
   <a href="#contact" class="btn btn-dark">Get started</a>
 </div></nav>
 
@@ -125,7 +134,7 @@ footer a:hover{color:var(--text)}
   <h1>Your track.<br>8.3M views.</h1>
   <p>We put your music on 4 luxury TikTok pages. Mansions, supercars, night city.</p>
   <div class="cta">
-    <a href="#pricing" class="btn btn-dark">From $15</a>
+    <a href="#pricing" class="btn btn-dark">See prices · from $15</a>
     <a href="#results" class="btn btn-light">See results</a>
   </div>
   <div class="reel">
@@ -134,6 +143,46 @@ footer a:hover{color:var(--text)}
     <img src="img/v3-2m.jpg" alt="">
   </div>
 </div></header>
+
+<section id="pricing" style="padding:96px 0 110px"><div class="wrap">
+  <div class="label">Pricing</div>
+  <h2 style="margin-bottom:20px">Pick a page.</h2>
+  <p class="muted" style="font-size:17px;margin-bottom:44px;max-width:560px">Three videos give the algorithm three chances to push your track. That's why we recommend a package.</p>
+  <div class="plans rv">
+    <div class="plan hot">
+      <div class="tag"><span class="pill">Recommended</span></div>
+      <h3>@moneroyal</h3><div class="meta muted">25.5K followers · on a viral wave</div>
+      <div class="price">$75</div><div class="muted" style="font-size:14px">3 videos · <s>$90</s> <span class="save">save $15</span></div>
+      <div class="pack muted">or 1 video for $30</div>
+      <a href="#contact" data-pkg="@moneroyal · 3 videos · $75" class="btn btn-white">Book</a>
+    </div>
+    <div class="plan">
+      <div class="tag"><span class="pill pill-l">Biggest reach</span></div>
+      <h3>@luxurytalk</h3><div class="meta muted">69.5K followers · 8.3M top video</div>
+      <div class="price">$100</div><div class="muted" style="font-size:14px">3 videos · <s>$120</s> <span class="save">save $20</span></div>
+      <div class="pack muted">or 1 video for $40</div>
+      <a href="#contact" data-pkg="@luxurytalk · 3 videos · $100" class="btn btn-dark">Book</a>
+    </div>
+    <div class="plan">
+      <div class="tag"></div>
+      <h3>@regal_vision</h3><div class="meta muted">11.2K followers</div>
+      <div class="price">$50</div><div class="muted" style="font-size:14px">3 videos · <s>$60</s> <span class="save">save $10</span></div>
+      <div class="pack muted">or 1 video for $20</div>
+      <a href="#contact" data-pkg="@regal_vision · 3 videos · $50" class="btn btn-dark">Book</a>
+    </div>
+    <div class="plan">
+      <div class="tag"><span class="pill pill-l">Best to test</span></div>
+      <h3>@wealth_lux</h3><div class="meta muted">9.2K followers</div>
+      <div class="price">$35</div><div class="muted" style="font-size:14px">3 videos · <s>$45</s> <span class="save">save $10</span></div>
+      <div class="pack muted">or 1 video for $15</div>
+      <a href="#contact" data-pkg="@wealth_lux · 3 videos · $35" class="btn btn-dark">Book</a>
+    </div>
+  </div>
+  <div class="bundle rv"><div><b>All 4 pages at once</b><div class="muted" style="font-size:14px;margin-top:4px">One video on every page. Best value for a release.</div></div><span class="p"><s>$105</s>$85</span><a href="#contact" data-pkg="All 4 pages · $85" class="btn btn-dark">Book the bundle</a></div>
+  <div class="trustrow rv">
+    <span>✓ Preview before posting</span><span>✓ Full stats in 36–48h</span><span>✓ Verify our pages with a code in bio</span><span>✓ Your artist credited</span>
+  </div>
+</div></section>
 
 <div class="wrap"><div class="stats rv">
   <div><b>8.3M</b><span>top video</span></div>
@@ -156,37 +205,6 @@ footer a:hover{color:var(--text)}
   <p class="also">Also <b>2.3M · 2.1M · 1.5M · 1.5M · 1.4M · 1.2M · 1.1M · 1M</b> and more. <a href="https://www.tiktok.com/@luxurytalk" target="_blank" rel="noopener" style="text-decoration:underline">See the profile ↗</a></p>
 </div></section>
 
-<section id="pricing" style="padding-top:0"><div class="wrap">
-  <div class="label">Pricing</div>
-  <h2>Pick a page.</h2>
-  <div class="plans rv">
-    <div class="plan hot">
-      <div class="tag">Trending now</div>
-      <h3>@moneroyal</h3><div class="meta muted">25.5K followers</div>
-      <div class="price">$30</div><div class="muted" style="font-size:14px">per video</div>
-      <div class="pack">3 videos <s>$90</s><b>$75</b></div>
-    </div>
-    <div class="plan">
-      <div class="tag"></div>
-      <h3>@luxurytalk</h3><div class="meta muted">69.5K followers</div>
-      <div class="price">$40</div><div class="muted" style="font-size:14px">per video</div>
-      <div class="pack">3 videos <s>$120</s><b>$100</b></div>
-    </div>
-    <div class="plan">
-      <div class="tag"></div>
-      <h3>@regal_vision</h3><div class="meta muted">11.2K followers</div>
-      <div class="price">$20</div><div class="muted" style="font-size:14px">per video</div>
-      <div class="pack">3 videos <s>$60</s><b>$50</b></div>
-    </div>
-    <div class="plan">
-      <div class="tag"></div>
-      <h3>@wealth_lux</h3><div class="meta muted">9.2K followers</div>
-      <div class="price">$15</div><div class="muted" style="font-size:14px">per video</div>
-      <div class="pack">3 videos <s>$45</s><b>$35</b></div>
-    </div>
-  </div>
-  <div class="bundle rv"><b>All 4 pages at once</b><span class="p"><s>$105</s>$85</span><a href="#contact" class="btn btn-dark">Book</a></div>
-</div></section>
 
 <section style="padding-top:0"><div class="wrap">
   <div class="label">How it works</div>
@@ -248,6 +266,7 @@ document.getElementById('reqForm').addEventListener('submit',function(e){e.preve
 var body='Name / label: '+v('name')+'\nEmail: '+v('email')+'\nTrack: '+v('track')+'\nPackage: '+v('package')+'\nTelegram / WhatsApp: '+v('messenger');
 location.href='mailto:partners@luxurytalk.net?subject='+encodeURIComponent('Track request: '+v('name'))+'&body='+encodeURIComponent(body);
 document.getElementById('formNote').style.display='block'});
+document.querySelectorAll('[data-pkg]').forEach(function(a){a.addEventListener('click',function(){var sel=document.querySelector('#reqForm select');for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.dataset.pkg){sel.selectedIndex=i}}})});
 (function(){var els=document.querySelectorAll('.rv');
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return}
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
