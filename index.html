@@ -114,6 +114,29 @@ nav .btn{height:38px;padding:0 18px;font-size:14px}
 .direct a:hover{padding-left:6px;transition:.2s}
 .small{margin-top:24px;font-size:14px;color:var(--muted)}
 
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:700px){.cases{grid-template-columns:1fr}}
+.case{background:var(--text);color:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:240px}
+.case .num{font-size:clamp(56px,8vw,88px);font-weight:600;letter-spacing:-.05em;line-height:1}
+.case .grow{color:#4ade80;font-size:14px;font-weight:500}
+.case p{color:#a3a3a3;font-size:15px}
+.case .btn{margin-top:auto;align-self:flex-start;height:42px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+@media(max-width:760px){.why{grid-template-columns:1fr}}
+.why div{border:1px solid var(--line);border-radius:20px;padding:24px}
+.why b{display:block;font-weight:600;margin-bottom:6px}
+.why span{font-size:15px;color:var(--muted)}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;font-size:18px;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--muted)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin-top:12px;color:var(--muted);font-size:16px;max-width:680px}
+.slots{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);border-radius:999px;margin-bottom:28px}
+.slots i{width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block}
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;background:var(--text);color:#fff;border-radius:999px;height:56px;align-items:center;justify-content:space-between;padding:0 8px 0 22px;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.25)}.mbar .btn{height:42px;padding:0 18px}body{padding-bottom:80px}}
 footer{padding:32px 0;font-size:13px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a:hover{color:var(--text)}
@@ -126,16 +149,16 @@ footer a:hover{color:var(--text)}
 
 <nav><div class="wrap">
   <a href="#" class="logo">Luxury Talk</a>
-  <div class="links"><a href="#pricing">Pricing</a><a href="#results">Results</a><a href="#contact">Contact</a></div>
+  <div class="links"><a href="#pricing">Pricing</a><a href="#clients">Client results</a><a href="#results">Top videos</a><a href="#faq">FAQ</a></div>
   <a href="#contact" class="btn btn-dark">Get started</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <h1>Your track.<br>8.3M views.</h1>
-  <p>We put your music on 4 luxury TikTok pages. Mansions, supercars, night city.</p>
+  <p>We put your music on 4 luxury TikTok pages. Mansions, supercars, night city. Client tracks are already hitting 50K+.</p>
   <div class="cta">
-    <a href="#pricing" class="btn btn-dark">See prices · from $15</a>
-    <a href="#results" class="btn btn-light">See results</a>
+    <a href="#contact" data-pkg="@moneroyal · 3 videos · $75" class="btn btn-dark">Book 3 videos · $75</a>
+    <a href="#clients" class="btn btn-light">See client results</a>
   </div>
   <div class="reel">
     <img src="img/v6-8m.jpg" alt="">
@@ -147,7 +170,8 @@ footer a:hover{color:var(--text)}
 <section id="pricing" style="padding:96px 0 110px"><div class="wrap">
   <div class="label">Pricing</div>
   <h2 style="margin-bottom:20px">Pick a page.</h2>
-  <p class="muted" style="font-size:17px;margin-bottom:44px;max-width:560px">Three videos give the algorithm three chances to push your track. That's why we recommend a package.</p>
+  <p class="muted" style="font-size:17px;margin-bottom:24px;max-width:560px">Three videos give the algorithm three chances to push your track. That's why most clients choose a 3-video package.</p>
+  <div class="slots"><i></i>Only 3 placements per page per day</div>
   <div class="plans rv">
     <div class="plan hot">
       <div class="tag"><span class="pill">Recommended</span></div>
@@ -184,6 +208,21 @@ footer a:hover{color:var(--text)}
   </div>
 </div></section>
 
+<section id="clients" style="padding:0 0 110px"><div class="wrap">
+  <div class="label">Client tracks · October 2026</div>
+  <h2 style="margin-bottom:20px">Real client results.</h2>
+  <p class="muted" style="font-size:17px;margin-bottom:44px;max-width:560px">Not our own sounds. These are tracks artists sent us to promote, posted this week on @luxurytalk.</p>
+  <div class="cases">
+    <div class="case rv"><div class="num">50K</div><div class="grow">views in the first days</div><p>Client track on @luxurytalk.</p><a href="https://www.tiktok.com/t/ZTfvS93hX/" target="_blank" rel="noopener" class="btn btn-white">Watch on TikTok ↗</a></div>
+    <div class="case rv"><div class="num">30K</div><div class="grow">and still growing</div><p>Client track on @luxurytalk.</p><a href="https://www.tiktok.com/t/ZTfvSNNHp/" target="_blank" rel="noopener" class="btn btn-white">Watch on TikTok ↗</a></div>
+  </div>
+  <div class="why rv">
+    <div><b>3 edits, 3 chances</b><span>Each video uses a different mansion and pacing. The stats show what works for your track.</span></div>
+    <div><b>Strongest part first</b><span>We open on the drop or hook, so viewers don't scroll away in the first seconds.</span></div>
+    <div><b>You stay in control</b><span>You approve every preview. Nothing goes live without your OK.</span></div>
+  </div>
+</div></section>
+
 <div class="wrap"><div class="stats rv">
   <div><b>8.3M</b><span>top video</span></div>
   <div><b>15+</b><span>videos over 1M</span></div>
@@ -214,6 +253,19 @@ footer a:hover{color:var(--text)}
     <div><b>We edit</b><span>Cut to the beat, by hand.</span></div>
     <div><b>You approve</b><span>Nothing goes live without your OK.</span></div>
     <div><b>Stats</b><span>Full numbers in 36–48 hours.</span></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <div class="label">FAQ</div>
+  <h2>Questions.</h2>
+  <div class="faq rv">
+    <details><summary>Can you guarantee views?</summary><p>No one honestly can, the algorithm decides. What we guarantee: your track as the sound, the artist credited, a preview for your approval, the video published on the agreed page, and full stats after 36–48 hours.</p></details>
+    <details><summary>How do I know the pages are yours?</summary><p>Send us any code, like 4521-8890, and we'll put it in the bio of the page you choose for 24 hours.</p></details>
+    <details><summary>Which tracks work best?</summary><p>Tracks with a strong beat and energy from the first seconds: phonk, Brazilian funk, house, slap and bass house, remixes, slowed and sped-up versions, melodic trap. Not sure about yours? Send it and we'll tell you honestly.</p></details>
+    <details><summary>How fast do you deliver?</summary><p>First previews within 24–48 hours after payment. A 3-video package is usually live within a few days.</p></details>
+    <details><summary>How do I pay?</summary><p>Crypto (USDT or USDC), direct bank transfer in USD, or PayPal for packages. Payment comes before the edit, and you approve every preview before anything is posted.</p></details>
+    <details><summary>Can I spread a package across several tracks?</summary><p>Yes. Labels often use a 3-video package for three different releases to see which one connects best.</p></details>
   </div>
 </div></section>
 
@@ -260,6 +312,8 @@ footer a:hover{color:var(--text)}
     <a href="https://www.tiktok.com/@wealth_lux" target="_blank" rel="noopener">@wealth_lux</a>
   </div>
 </div></footer>
+
+<div class="mbar"><span>3 videos from $50</span><a href="#contact" data-pkg="@moneroyal · 3 videos · $75" class="btn btn-white">Book now</a></div>
 
 <script>
 document.getElementById('reqForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim()};
