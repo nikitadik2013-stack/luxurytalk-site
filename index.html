@@ -143,34 +143,84 @@ footer a:hover{color:var(--text)}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+.hero .kicker{display:inline-block;font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);border-radius:999px;margin-bottom:28px}
+.hero h1{font-size:clamp(44px,8vw,96px)}
+.hero p{max-width:600px}
+.hero .stats{margin-top:72px;text-align:left}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vid{margin:0}
+.vid .frame{border-radius:20px;overflow:hidden;background:#000;aspect-ratio:9/16}
+.vid iframe{width:100%;height:100%;border:0;display:block}
+.vid figcaption{display:flex;justify-content:space-between;align-items:baseline;padding:14px 4px 0;gap:10px}
+.vid figcaption b{font-size:24px;font-weight:600;letter-spacing:-.03em}
+.vid .watch{display:inline-block;margin:8px 4px 0;font-size:14px;text-decoration:underline;color:var(--muted)}
+.vid figcaption span{font-size:14px;color:var(--muted);text-align:right}
+@media(max-width:760px){.vids{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px;scrollbar-width:none}.vids::-webkit-scrollbar{display:none}.vid{flex:0 0 72%;scroll-snap-align:center}}
+.total{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:-24px 0 40px}
+.total b{font-size:clamp(40px,6vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.total span{color:var(--muted);font-size:16px}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
   <a href="#" class="logo">Luxury Talk</a>
-  <div class="links"><a href="#pricing">Pricing</a><a href="#clients">Client results</a><a href="#results">Top videos</a><a href="#faq">FAQ</a></div>
-  <a href="#contact" class="btn btn-dark">Get started</a>
+  <div class="links"><a href="#clients">Client results</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+  <a href="#contact" data-pkg="Free preview first" class="btn btn-dark">Free preview</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <h1>Your track.<br>8.3M views.</h1>
-  <p>We put your music on luxury TikTok pages: mansions, supercars, yachts, night city. See it before you pay: we make a free preview video for your track.</p>
+  <div class="kicker">TikTok promotion for artists and labels</div>
+  <h1>Get your track heard on TikTok.</h1>
+  <p>We post your song as the sound on our luxury TikTok pages: supercars, mansions, yachts, night city. Before you pay anything, we make you a free preview video.</p>
   <div class="cta">
     <a href="#contact" data-pkg="Free preview first" class="btn btn-dark">Get a free preview</a>
     <a href="#clients" class="btn btn-light">See client results</a>
   </div>
-  <div class="reel">
-    <img src="img/v6-8m.jpg" alt="">
-    <img src="img/v8-3m.jpg" alt="">
-    <img src="img/v3-2m.jpg" alt="">
+  <div class="stats rv">
+    <div><b>8.3M</b><span>views on our top video</span></div>
+    <div><b>15+</b><span>videos over 1M views</span></div>
+    <div><b>115K</b><span>followers on 4 pages</span></div>
+    <div><b>12.6M</b><span>likes</span></div>
   </div>
 </div></header>
 
-<section id="pricing" style="padding:96px 0 110px"><div class="wrap">
+<section id="clients"><div class="wrap">
+  <div class="label">Client results</div>
+  <h2>Real tracks. Real views.</h2>
+  <p class="muted" style="font-size:17px;margin:-32px 0 44px;max-width:560px">These are tracks artists sent us to promote. Tap any video to watch it on TikTok.</p>
+  <div class="vids" id="clientvids">
+    <figure class="vid rv"><div class="frame"><iframe src="https://www.tiktok.com/player/v1/7700561131756080398?music_info=1&description=0&controls=1&rel=0" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="50K views on @luxurytalk"></iframe></div><figcaption><b>50K</b><span>client track · @luxurytalk</span></figcaption><a class="watch" href="https://www.tiktok.com/@luxurytalk/video/7700561131756080398" target="_blank" rel="noopener">Watch on TikTok ↗</a></figure>
+    <figure class="vid rv"><div class="frame"><iframe src="https://www.tiktok.com/player/v1/7701315924938231053?music_info=1&description=0&controls=1&rel=0" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="30K views on @luxurytalk"></iframe></div><figcaption><b>30K</b><span>client track · @luxurytalk</span></figcaption><a class="watch" href="https://www.tiktok.com/@luxurytalk/video/7701315924938231053" target="_blank" rel="noopener">Watch on TikTok ↗</a></figure>
+    <figure class="vid rv"><div class="frame"><iframe src="https://www.tiktok.com/player/v1/7693467126576794913?music_info=1&description=0&controls=1&rel=0" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="3.5M views on @moneroyal"></iframe></div><figcaption><b>3.5M</b><span>sound grew 150 → 2,000 videos</span></figcaption><a class="watch" href="https://www.tiktok.com/@moneroyal/video/7693467126576794913" target="_blank" rel="noopener">Watch on TikTok ↗</a></figure>
+  </div>
+</div></section>
+
+<section id="top" style="padding-top:0"><div class="wrap">
+  <div class="label">Top videos on @luxurytalk</div>
+  <h2>What our pages can do.</h2>
+  <div class="vids">
+    <figure class="vid rv"><div class="frame"><iframe src="https://www.tiktok.com/player/v1/7643881001176878349?music_info=1&description=0&controls=1&rel=0" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="8.3M views on @luxurytalk"></iframe></div><figcaption><b>8.3M</b><span>955K likes</span></figcaption><a class="watch" href="https://www.tiktok.com/@luxurytalk/video/7643881001176878349" target="_blank" rel="noopener">Watch on TikTok ↗</a></figure>
+    <figure class="vid rv"><div class="frame"><iframe src="https://www.tiktok.com/player/v1/7687182638800555277?music_info=1&description=0&controls=1&rel=0" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="7.4M views on @luxurytalk"></iframe></div><figcaption><b>7.4M</b><span>@luxurytalk</span></figcaption><a class="watch" href="https://www.tiktok.com/@luxurytalk/video/7687182638800555277" target="_blank" rel="noopener">Watch on TikTok ↗</a></figure>
+  </div>
+  <p class="also">Also <b>3.2M · 2.3M · 2.1M · 1.7M · 1.6M · 1.5M · 1.3M · 1.2M · 1.1M · 1M</b> and more. <a href="https://www.tiktok.com/@luxurytalk" target="_blank" rel="noopener" style="text-decoration:underline">See the profile ↗</a></p>
+</div></section>
+
+<section id="how" style="padding-top:0"><div class="wrap">
+  <div class="label">How it works</div>
+  <h2>Four steps.</h2>
+  <div class="steps rv">
+    <div><b>1. Send your track</b><span>A TikTok sound link or any streaming link.</span></div>
+    <div><b>2. Free preview</b><span>We cut a video to your beat and send it to you privately.</span></div>
+    <div><b>3. You decide</b><span>Love it? Pick 1 or 3 videos. Not for you? No cost.</span></div>
+    <div><b>4. We post + stats</b><span>Your track as the sound, full numbers after 36–48 hours.</span></div>
+  </div>
+</div></section>
+
+<section id="pricing" style="padding-top:0"><div class="wrap">
   <div class="label">Pricing</div>
-  <h2 style="margin-bottom:20px">One simple price.</h2>
-  <p class="muted" style="font-size:17px;margin-bottom:24px;max-width:560px">First you get a free preview video for your track. Love it? We post it. Not for you? You pay nothing.</p>
+  <h2>Simple prices.</h2>
   <div class="slots"><i></i>Only 3 placements per page per day</div>
   <div class="plans rv">
     <div class="plan">
@@ -195,59 +245,10 @@ footer a:hover{color:var(--text)}
       <a href="#contact" data-pkg="3 videos · $75" class="btn btn-white">Book</a>
     </div>
   </div>
+  <div class="bundle rv"><div><b>Smaller pages, smaller price</b><div class="muted" style="font-size:14px;margin-top:4px">@regal_vision (11.2K) or @wealth_lux (9.2K). Great for a first test.</div></div><span class="p">$20 <span style="font-size:15px;font-weight:400;color:var(--muted)">per video</span></span><a href="#contact" data-pkg="@regal_vision or @wealth_lux · 1 video · $20" class="btn btn-dark">Book</a></div>
   <div class="bundle rv"><div><b>Working with us regularly?</b><div class="muted" style="font-size:14px;margin-top:4px">Partners get 10% off every next package.</div></div><span class="p">−10%</span><a href="#contact" data-pkg="Custom package for a label" class="btn btn-dark">Talk to us</a></div>
   <div class="trustrow rv">
     <span>✓ Free preview, pay only if you love it</span><span>✓ Full stats in 36–48h</span><span>✓ Verify our pages with a code in bio</span><span>✓ Your artist credited</span><span>✓ Public for 30 days</span>
-  </div>
-</div></section>
-
-
-<section id="clients" style="padding:0 0 110px"><div class="wrap">
-  <div class="label">Client tracks · October 2026</div>
-  <h2 style="margin-bottom:20px">Real client results.</h2>
-  <p class="muted" style="font-size:17px;margin-bottom:44px;max-width:560px">Not our own sounds. These are tracks artists sent us to promote, posted this week on @luxurytalk.</p>
-  <div class="cases">
-    <div class="case rv"><div class="num">3.5M</div><div class="grow">views, sound grew 150 → 2,000 videos</div><p>One video on @moneroyal. People started using the sound in their own videos.</p><a href="https://vm.tiktok.com/ZGdXAAhyv/" target="_blank" rel="noopener" class="btn btn-white">Watch on TikTok ↗</a></div>
-    <div class="case rv"><div class="num">50K</div><div class="grow">views in the first days</div><p>Client track on @luxurytalk.</p><a href="https://www.tiktok.com/t/ZTfvS93hX/" target="_blank" rel="noopener" class="btn btn-white">Watch on TikTok ↗</a></div>
-    <div class="case rv"><div class="num">30K</div><div class="grow">and still growing</div><p>Client track on @luxurytalk.</p><a href="https://www.tiktok.com/t/ZTfvSNNHp/" target="_blank" rel="noopener" class="btn btn-white">Watch on TikTok ↗</a></div>
-  </div>
-  <div class="why rv">
-    <div><b>3 edits, 3 chances</b><span>Each video uses a different mansion and pacing. The stats show what works for your track.</span></div>
-    <div><b>Strongest part first</b><span>We open on the drop or hook, so viewers don't scroll away in the first seconds.</span></div>
-    <div><b>You stay in control</b><span>You approve every preview. Nothing goes live without your OK.</span></div>
-  </div>
-</div></section>
-
-<div class="wrap"><div class="stats rv">
-  <div><b>8.3M</b><span>top video</span></div>
-  <div><b>15+</b><span>videos over 1M</span></div>
-  <div><b>115K</b><span>followers</span></div>
-  <div><b>12.6M</b><span>likes</span></div>
-</div></div>
-
-<section id="results"><div class="wrap">
-  <div class="label">Top videos on @luxurytalk</div>
-  <h2>Real numbers.</h2>
-  <div class="gal">
-    <figure class="rv"><img src="img/v8-3m.jpg" alt="8.3M views" loading="lazy"><figcaption><b>8.3M</b><span>955K likes</span></figcaption></figure>
-    <figure class="rv"><img src="img/v6-8m.jpg" alt="6.8M views" loading="lazy"><figcaption><b>6.8M</b><span>1.3M likes</span></figcaption></figure>
-    <figure class="rv"><img src="img/v3-2m.jpg" alt="3.2M views" loading="lazy"><figcaption><b>3.2M</b><span>464K likes</span></figcaption></figure>
-    <figure class="rv"><img src="img/v1-7m.jpg" alt="1.7M views" loading="lazy"><figcaption><b>1.7M</b><span>211K likes</span></figcaption></figure>
-    <figure class="rv"><img src="img/v1-6m.jpg" alt="1.6M views" loading="lazy"><figcaption><b>1.6M</b><span>195K likes</span></figcaption></figure>
-    <figure class="rv"><img src="img/v1-3m.jpg" alt="1.3M views" loading="lazy"><figcaption><b>1.3M</b><span>210K likes</span></figcaption></figure>
-  </div>
-  <p class="also">Also <b>2.3M · 2.1M · 1.5M · 1.5M · 1.4M · 1.2M · 1.1M · 1M</b> and more. <a href="https://www.tiktok.com/@luxurytalk" target="_blank" rel="noopener" style="text-decoration:underline">See the profile ↗</a></p>
-</div></section>
-
-
-<section style="padding-top:0"><div class="wrap">
-  <div class="label">How it works</div>
-  <h2>Four steps.</h2>
-  <div class="steps rv">
-    <div><b>Send your track</b><span>A link is enough.</span></div>
-    <div><b>Free preview</b><span>Cut to the beat, sent to you privately.</span></div>
-    <div><b>You decide</b><span>Love it? Pick 1 or 3 videos. Not for you? No cost.</span></div>
-    <div><b>Stats</b><span>Full numbers in 36–48 hours.</span></div>
   </div>
 </div></section>
 
@@ -255,29 +256,31 @@ footer a:hover{color:var(--text)}
   <div class="label">FAQ</div>
   <h2>Questions.</h2>
   <div class="faq rv">
-    <details><summary>Can you guarantee views?</summary><p>No one honestly can, the algorithm decides. What we guarantee: your track as the sound, the artist credited, a preview for your approval, the video published on the agreed page, and full stats after 36–48 hours.</p></details>
+    <details><summary>Is the preview really free?</summary><p>Yes. We make a real video for your track and send it to you privately. Nothing gets posted until you say yes. If it's not for you, you pay nothing.</p></details>
+    <details><summary>Can you guarantee views?</summary><p>No one honestly can, the algorithm decides. What we guarantee: your track as the sound, the artist credited, a preview before anything goes live, the video on the agreed page, and full stats after 36–48 hours.</p></details>
     <details><summary>How do I know the pages are yours?</summary><p>Send us any code, like 4521-8890, and we'll put it in the bio of the page you choose for 24 hours.</p></details>
-    <details><summary>Which tracks work best?</summary><p>Tracks with a strong beat and energy from the first seconds: phonk, Brazilian funk, house, slap and bass house, remixes, slowed and sped-up versions, melodic trap. Not sure about yours? Send it and we'll tell you honestly.</p></details>
-    <details><summary>How fast do you deliver?</summary><p>Your free preview within 24–48 hours after you send the track. Once you approve and pay, the video goes live within a day. A 3-video package is usually live within a few days.</p></details>
-    <details><summary>How do I pay?</summary><p>Crypto (USDT or USDC) or PayPal. You see a free preview first and pay only if you like it. Then we post.</p></details>
+    <details><summary>Which tracks work best?</summary><p>Tracks with a strong beat and energy from the first seconds: phonk, house, afro house, funk, bass, trap, remixes, sped-up versions. Not sure about yours? Send it and we'll tell you honestly.</p></details>
+    <details><summary>How fast is it?</summary><p>Your free preview within 24–48 hours after you send the track. Once you approve and pay, the video goes live within a day.</p></details>
+    <details><summary>How do I pay?</summary><p>Crypto (USDT or USDC) or PayPal. You see the preview first and pay only if you like it. Then we post.</p></details>
     <details><summary>How long does my video stay up?</summary><p>Every video stays public for 30 days after it's posted. After that it's hidden, unless you extend it: 10 USD per video for each extra month, or 15 USD once to keep it public permanently. Already worked with us? For existing clients the 30 days count from November 3, 2026. Message us and we'll sort out your videos individually.</p></details>
-    <details><summary>Can I spread a package across several tracks?</summary><p>Yes. Labels often use a 3-video package for three different releases to see which one connects best.</p></details>
+    <details><summary>Can I split a package across several tracks?</summary><p>Yes. Labels often use a 3-video package for three different releases to see which one connects best.</p></details>
   </div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
   <div class="label">Contact</div>
   <h2>Let's start.</h2>
-  <p class="lead">Send your track and we'll make you a free preview. We reply within a few hours.</p>
+  <p class="lead">Send your track and we'll make you a free preview. We usually reply within a few hours.</p>
   <div class="cgrid">
     <form class="form" id="reqForm">
       <input name="name" required placeholder="Name or label">
       <input type="email" name="email" required placeholder="Email">
-      <input name="track" required placeholder="Track link">
+      <input name="track" required placeholder="Track link (TikTok sound, Spotify, SoundCloud...)">
       <select name="package" required>
         <option>Free preview first</option>
         <option>1 video · $30</option>
         <option>3 videos · $75</option>
+        <option>@regal_vision or @wealth_lux · 1 video · $20</option>
         <option>Custom package for a label</option>
         <option>Not sure, recommend me</option>
       </select>
@@ -288,15 +291,15 @@ footer a:hover{color:var(--text)}
     <div>
       <div class="direct">
         <a href="https://t.me/luxurytalk_net" target="_blank" rel="noopener">Telegram <span>@luxurytalk_net ↗</span></a>
-        <a href="mailto:partners@luxurytalk.net?subject=Track%20promotion">Email <span>partners@luxurytalk.net ↗</span></a>
+        <a href="mailto:partners@luxurytalk.net?subject=Free%20preview">Email <span>partners@luxurytalk.net ↗</span></a>
       </div>
-      <p class="small">Every placement gets its own slot. Bigger campaign or several artists? Email us for a custom schedule.</p>
+      <p class="small">Bigger campaign or several artists? Email us for a custom schedule.</p>
     </div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <div>© 2026 Luxury Talk<br><span style="font-size:13px;opacity:.7">Videos stay public for 30 days after posting. Extend: 10 USD per video per month, or 15 USD once to keep it forever. Existing clients: count starts November 3, 2026, contact us to discuss.</span></div>
+  <div>© 2026 Luxury Talk<br><span style="font-size:13px;opacity:.7">Videos stay public for 30 days after posting. Extend: 10 USD per video per month, or 15 USD once to keep it forever.</span></div>
   <div style="display:flex;gap:20px;flex-wrap:wrap">
     <a href="https://www.tiktok.com/@luxurytalk" target="_blank" rel="noopener">@luxurytalk</a>
     <a href="https://www.tiktok.com/@moneroyal" target="_blank" rel="noopener">@moneroyal</a>
@@ -305,7 +308,7 @@ footer a:hover{color:var(--text)}
   </div>
 </div></footer>
 
-<div class="mbar"><span>Free preview · then from $30</span><a href="#contact" data-pkg="Free preview first" class="btn btn-white">Get preview</a></div>
+<div class="mbar"><span>Free preview · then from $20</span><a href="#contact" data-pkg="Free preview first" class="btn btn-white">Get preview</a></div>
 
 <script>
 document.getElementById('reqForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim()};
